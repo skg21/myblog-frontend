@@ -8,7 +8,7 @@ function createArticleList() {
     var itemInnerLeftDiv = createInnerLeftCart();
 
     //<div class="item-inner-left-img-div"></div>
-    
+
     var itemInnerLeftImgDiv = createInnerLeftImgCart();
 
     itemDiv.appendChild(itemInnerLeftDiv);
@@ -39,7 +39,7 @@ function createInnerLeftCart() {
     itemInnerLeftDiv.appendChild(h3);
 
     var span = document.createElement("span");
-    span.innerHTML ="Nov 21 <div> . </div> 9 min read"
+    span.innerHTML = "Nov 21 <div> . </div> 9 min read"
     itemInnerLeftDiv.appendChild(span);
 
     return itemInnerLeftDiv;
@@ -59,4 +59,11 @@ function createDiv(className) {
     var div = document.createElement("div");
     div.setAttribute("class", className);
     return div;
+}
+//---------------------------------------------------------------------//
+
+function createArticleList() {
+    var rightDiv = document.getElementsByClassName("right-div")[0];
+
+    var itemInnerDive = document.createElement("div");
 }
