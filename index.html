@@ -4,11 +4,11 @@
 <head></head>
 <script src="index.js"></script>
 
-<body onload="createArticleList();">
+<body onload="loadIndex();">
     <!---section1-start-->
     <div class="section1">
         <div class="main-div">
-            <nav>
+            <div class="navDiv">
                 <h2>Medium</h2>
                 <ul>
                     <li>
@@ -19,7 +19,7 @@
                         <button class="btn"> Get Started </button>
                     </li>
                 </ul>
-            </nav>
+            </div>
         </div>
 
     </div>
@@ -32,9 +32,10 @@
                 <br> find you
             </h3>
             <h1>Red and share new on just about any topic Everyone's
+
                 <br> welcome. <a href="#"> Lerarn more.</a>
             </h1>
-            <button>Get Started </button>
+            <button> Get Started </button>
         </div>
     </div>
     <!--section2-end-->
@@ -93,50 +94,8 @@
             </div>
 
         </div>
-        <!--right-div-pending-work-->
         <div class="right-div">
-            <div class="right-item-div">
 
-                <div class="p">
-                    <p>DISCOVER More OF WHAT MATTERS TO You</p>
-                </div>
-                <div class="box-div"><a href="#">
-                        <h4>Self</h4>
-                    </a></div>
-
-                <div class="box-div"><a href="#">
-                        <h4>Relationships</h4>
-                    </a></div>
-
-                <div class="box-div"><a href="#">
-                        <h4>Data science</h4>
-                    </a></div>
-
-                <div class="box-div"><a href="#">
-                        <h4>Programming</h4>
-                    </a></div>
-
-                <div class="box-div"><a href="#">
-                        <h4>Productivity</h4>
-                    </a></div>
-
-                <div class="box-div" v><a href="#">
-                        <h4>Javacript</h4>
-                    </a></div>
-                <div class="box-div" v><a href="#">
-                        <h4>Machine Learning</h4>
-                    </a></div>
-                <div class="box-div" v><a href="#">
-                        <h4>Politics</h4>
-                    </a></div>
-                <div class="box-div" v><a href="#">
-                        <h4>Health</h4>
-                    </a></div>
-
-                <h4>See all topics</h4>
-
-
-            </div>
         </div>
     </div>
 
@@ -162,7 +121,7 @@
             width: 1200px;
         }
 
-        nav {
+        .navDiv {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -170,7 +129,7 @@
             padding: 0 5%;
         }
 
-        nav ul li a {
+        .navDiv ul li a {
             margin: 25px;
             font-family: myriad pro regular;
             color: #505050;
@@ -188,7 +147,7 @@
             margin-left: 20px;
         }
 
-        nav h2 {
+        .navDiv h2 {
             font-size: 40px;
             margin-top: 20px;
         }

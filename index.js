@@ -1,3 +1,11 @@
+function loadIndex() {
+    createHeader();
+
+    createArticleList();
+
+    showInterests();
+}
+
 function createArticleList() {
     var leftDiv = document.getElementsByClassName("left-div")[0];
 
@@ -62,8 +70,85 @@ function createDiv(className) {
 }
 //---------------------------------------------------------------------//
 
-function createArticleList() {
+function showInterests() {
     var rightDiv = document.getElementsByClassName("right-div")[0];
+    var rightItemDiv = createDiv("right-item-div");
+    var pDiv = createDiv("p");
+    rightItemDiv.appendChild(pDiv);
 
-    var itemInnerDive = document.createElement("div");
+    var p = document.createElement("p");
+    p.innerText = "DISCOVER More OF WHAT MATTERS TO You";
+    pDiv.appendChild(p);
+
+    //createInterestList()
+    var boxDiv = createInterestListItem("Self");
+    rightItemDiv.appendChild(boxDiv);
+    var boxDiv = createInterestListItem("Relationship");
+    rightItemDiv.appendChild(boxDiv);
+    var boxDiv = createInterestListItem("Data Science");
+    rightItemDiv.appendChild(boxDiv);
+    var boxDiv = createInterestListItem("Programming");
+    rightItemDiv.appendChild(boxDiv);
+    var boxDiv = createInterestListItem("Productivity");
+    rightItemDiv.appendChild(boxDiv);
+    var boxDiv = createInterestListItem("javaScript");
+    rightItemDiv.appendChild(boxDiv);
+    var boxDiv = createInterestListItem("Machine Learning");
+    rightItemDiv.appendChild(boxDiv);
+    var boxDiv = createInterestListItem("Politics");
+    rightItemDiv.appendChild(boxDiv);
+    var boxDiv = createInterestListItem("Health");
+    rightItemDiv.appendChild(boxDiv);
+
+    var footer = document.createElement("h4");
+    footer.innerText = "See all topics";
+
+    rightItemDiv.appendChild(footer);
+    rightDiv.appendChild(rightItemDiv);
+}
+
+function createInterestListItem(title) {
+    var boxDiv = createDiv("box-div");
+    var a = document.createElement("a");
+    a.setAttribute("href", "#");
+    var h4 = document.createElement("h4");
+    h4.innerText = title;
+    a.appendChild(h4);
+    boxDiv.appendChild(a);
+    return boxDiv;
+}
+
+//----------------------------------//
+
+function createHeader() {
+    var sectionDiv = document.getElementsByClassName("section1")[0];
+
+    var mainDiv = createDiv("main-div");
+    var navDiv = createDiv("navDiv");
+    var h2 = document.createElement("h2");
+
+    var ul = document.createElement("ul");
+    var li = document.createElement("li");
+    var a = document.createElement("a");
+    a.setAttribute("herf", "#");
+
+
+
+    sectionDiv.appendChild(mainDiv);
+    mainDiv.appendChild(navDiv);
+    navDiv.appendChild(h2);
+    navDiv.appendChild(ul);
+    ul.appendChild(li);
+
+    //createInterestList()
+
+}
+function creatTitle(item) {
+    var li = document.createElement("li");
+    var a = document.createElement("a");
+    a.innerText = item;
+    a.setAttribute("herf", "#");
+
+    li.appendChild(a);
+
 }
