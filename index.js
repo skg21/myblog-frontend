@@ -120,26 +120,86 @@ function createInterestListItem(title) {
 
 //----------------------------------//
 
+
+function createHeader() {
+    var headerDiv = document.getElementsByClassName("headerDiv")[0];
+
+
+    var oneDiv = document.createElement("oneDiv");
+    var twoDiv = document.createElement("twoDiv");
+    var threeDiv = document.createElement("threeDiv");
+    var h2 = document.createElement("h2");
+    h2.innerText = "Medium";
+
+    var ul = document.createElement("ul");
+    var li = document.createElement("li");
+    var a = document.createElement("a");
+    var btn = document.createElement("btn");
+    btn.innerText = "Get Started";
+
+
+    headerDiv.appendChild(oneDiv);
+    headerDiv.appendChild(twoDiv);
+    headerDiv.appendChild(threeDiv);
+    oneDiv.appendChild(h2);
+    twoDiv.appendChild(ul);
+    threeDiv.appendChild(btn);
+    ul.appendChild(li);
+    li.appendChild(a);
+
+    var li = creatTitle("Our Story");
+    ul.appendChild(li);
+    var li = creatTitle("Membership");
+    ul.appendChild(li);
+    var li = creatTitle("write");
+    ul.appendChild(li);
+    var li = creatTitle("sing In");
+    ul.appendChild(li);
+
+}
+
+function creatTitle(item) {
+    var li = document.createElement("li");
+    var a = document.createElement("a");
+    a.innerText = item;
+    a.setAttribute("herf", "#");
+    li.appendChild(a);
+    return li;
+
+
+}
+//---------------------------------//
+/*
 function createHeader() {
     var sectionDiv = document.getElementsByClassName("section1")[0];
 
     var mainDiv = createDiv("main-div");
     var navDiv = createDiv("navDiv");
     var h2 = document.createElement("h2");
-
+    h2.innerText = "Medium";
     var ul = document.createElement("ul");
-    var li = document.createElement("li");
-    var a = document.createElement("a");
-    a.setAttribute("herf", "#");
+    var li = creatTitle("Our Story");
+    ul.appendChild(li);
+    var li = creatTitle("Membership");
+    ul.appendChild(li);
 
+    var li = creatTitle("write");
+    ul.appendChild(li);
 
+    var li = creatTitle("sing In");
+    ul.appendChild(li);
+
+    //getStarted button
+    var button = document.createElement("button");
+    button.innerText = "Get Started";
+    button.setAttribute("class", "btn");
+
+    ul.appendChild(button);
 
     sectionDiv.appendChild(mainDiv);
     mainDiv.appendChild(navDiv);
     navDiv.appendChild(h2);
     navDiv.appendChild(ul);
-    ul.appendChild(li);
-
     //createInterestList()
 
 }
@@ -148,7 +208,6 @@ function creatTitle(item) {
     var a = document.createElement("a");
     a.innerText = item;
     a.setAttribute("herf", "#");
-
     li.appendChild(a);
-
-}
+    return li
+}  */
