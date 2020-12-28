@@ -122,30 +122,17 @@ function createInterestListItem(title) {
 
 
 function createHeader() {
-    var headerDiv = document.getElementsByClassName("headerDiv")[0];
+    var headerDiv = document.getElementsByClassName("header-div")[0];
 
-
-    var oneDiv = document.createElement("oneDiv");
-    var twoDiv = document.createElement("twoDiv");
-    var threeDiv = document.createElement("threeDiv");
+    //<div class="one-div"></div>
+    var oneDiv = createDiv("one-div");
     var h2 = document.createElement("h2");
     h2.innerText = "Medium";
-
-    var ul = document.createElement("ul");
-    var li = document.createElement("li");
-    var a = document.createElement("a");
-    var btn = document.createElement("btn");
-    btn.innerText = "Get Started";
-
-
-    headerDiv.appendChild(oneDiv);
-    headerDiv.appendChild(twoDiv);
-    headerDiv.appendChild(threeDiv);
     oneDiv.appendChild(h2);
-    twoDiv.appendChild(ul);
-    threeDiv.appendChild(btn);
-    ul.appendChild(li);
-    li.appendChild(a);
+
+    var twoDiv = createDiv("two-div");
+    
+    var ul = document.createElement("ul");
 
     var li = creatTitle("Our Story");
     ul.appendChild(li);
@@ -155,7 +142,18 @@ function createHeader() {
     ul.appendChild(li);
     var li = creatTitle("sing In");
     ul.appendChild(li);
+  
+    twoDiv.appendChild(ul);
+    
+    var threeDiv = createDiv("three-div");
+    var btn = document.createElement("button");
+    btn.setAttribute("class", "btn");
+    btn.innerText = "Get Started";
+    threeDiv.appendChild(btn);
 
+    headerDiv.appendChild(oneDiv);
+    headerDiv.appendChild(twoDiv);
+    headerDiv.appendChild(threeDiv);
 }
 
 function creatTitle(item) {
