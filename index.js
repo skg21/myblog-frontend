@@ -69,6 +69,7 @@ function createDiv(className) {
     return div;
 }
 //---------------------------------------------------------------------//
+var interestList = ["self", "Relationship", "Data science", "Programming", "Productivity", "Politics", "Health", "Technology"];
 
 function showInterests() {
     var rightDiv = document.getElementsByClassName("right-div")[0];
@@ -81,24 +82,11 @@ function showInterests() {
     pDiv.appendChild(p);
 
     //createInterestList()
-    var boxDiv = createInterestListItem("Self");
-    rightItemDiv.appendChild(boxDiv);
-    var boxDiv = createInterestListItem("Relationship");
-    rightItemDiv.appendChild(boxDiv);
-    var boxDiv = createInterestListItem("Data Science");
-    rightItemDiv.appendChild(boxDiv);
-    var boxDiv = createInterestListItem("Programming");
-    rightItemDiv.appendChild(boxDiv);
-    var boxDiv = createInterestListItem("Productivity");
-    rightItemDiv.appendChild(boxDiv);
-    var boxDiv = createInterestListItem("javaScript");
-    rightItemDiv.appendChild(boxDiv);
-    var boxDiv = createInterestListItem("Machine Learning");
-    rightItemDiv.appendChild(boxDiv);
-    var boxDiv = createInterestListItem("Politics");
-    rightItemDiv.appendChild(boxDiv);
-    var boxDiv = createInterestListItem("Health");
-    rightItemDiv.appendChild(boxDiv);
+
+    for(var i = 0; i < interestList.length; i++) {
+        var boxDiv = createInterestListItem(interestList[i]);
+        rightItemDiv.appendChild(boxDiv);
+    }
 
     var footer = document.createElement("h4");
     footer.innerText = "See all topics";
@@ -119,7 +107,7 @@ function createInterestListItem(title) {
 }
 
 //----------------------------------//
-
+var navMenus = ["Our Story", "Membership", "write", "Sign In"];
 
 function createHeader() {
     var headerDiv = document.getElementsByClassName("header-div")[0];
@@ -134,14 +122,10 @@ function createHeader() {
     
     var ul = document.createElement("ul");
 
-    var li = creatTitle("Our Story");
-    ul.appendChild(li);
-    var li = creatTitle("Membership");
-    ul.appendChild(li);
-    var li = creatTitle("write");
-    ul.appendChild(li);
-    var li = creatTitle("sing In");
-    ul.appendChild(li);
+    for(var i = 0; i < navMenus.length; i++) {
+        var li = creatTitle(navMenus[i]);
+        ul.appendChild(li);
+    }
   
     twoDiv.appendChild(ul);
     
