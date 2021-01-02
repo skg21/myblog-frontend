@@ -6,58 +6,104 @@ function loadIndex() {
     showInterests();
 }
 
+//post Data
+var articleData = [{
+    "user": {
+        "username": "",
+        "profile_pic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCRtu9x86OcdwTZU9HeZx39XUL8VSYjy1bpw&usqp=CAU",
+        "profile_bio": "Emily Stubbs In Fitness And In Healty"
+    },
+    "post": {
+        "title": "I Exercised Twice a day for 75day-Here'sWhat Happened",
+        "subtitle": "I felt invincible",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLOIOkSdoUjc2HMcY2gKRURgSO_YaiTkyE3g&usqp=CAU",
+        "time": "Nov 21.9 min read"
+    }
+},
+
+{
+    "user": {
+        "username": "",
+        "profile_pic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCRtu9x86OcdwTZU9HeZx39XUL8VSYjy1bpw&usqp=CAU",
+        "profile_bio": "Software Engineer"
+    },
+    "post": {
+        "title": "I Exercised Twice a day for 75day-Here'sWhat Happened",
+        "subtitle": "I felt invincible",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLOIOkSdoUjc2HMcY2gKRURgSO_YaiTkyE3g&usqp=CAU",
+        "time": "Nov 21.9 min read"
+    }
+},
+
+{
+    "user": {
+        "username": "",
+        "profile_pic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCRtu9x86OcdwTZU9HeZx39XUL8VSYjy1bpw&usqp=CAU",
+        "profile_bio": "Emily Stubbs In Fitness And In Healty"
+    },
+    "post": {
+        "title": "I Exercised Twice a day for 75day-Here'sWhat Happened",
+        "subtitle": "I felt invincible",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLOIOkSdoUjc2HMcY2gKRURgSO_YaiTkyE3g&usqp=CAU",
+        "time": "Nov 21.9 min read"
+    }
+}
+]
+
 function createArticleList() {
     var leftDiv = document.getElementsByClassName("left-div")[0];
 
+    for (var i = 0; i < articleData.length; i++) {
 
-    var itemDiv = createDiv("item-div");
+        var itemDiv = createDiv("item-div");
 
-    //<div class="item-inner-left-div"></div>
-    var itemInnerLeftDiv = createInnerLeftCart();
+        //<div class="item-inner-left-div"></div>
+        var itemInnerLeftDiv = createInnerLeftCart(articleData[i]);
 
-    //<div class="item-inner-left-img-div"></div>
+        //<div class="item-inner-left-img-div"></div>
 
-    var itemInnerLeftImgDiv = createInnerLeftImgCart();
+        var itemInnerLeftImgDiv = createInnerLeftImgCart(articleData[i].post.img);
 
-    itemDiv.appendChild(itemInnerLeftDiv);
-    itemDiv.appendChild(itemInnerLeftImgDiv);
+        itemDiv.appendChild(itemInnerLeftDiv);
+        itemDiv.appendChild(itemInnerLeftImgDiv);
 
-    leftDiv.appendChild(itemDiv);
+        leftDiv.appendChild(itemDiv);
+    }
 }
 
-function createInnerLeftCart() {
+function createInnerLeftCart(data) {
     var itemInnerLeftDiv = createDiv("item-inner-left-div");
 
     var innerItemDiv = createDiv("item-inner-div");
     var img = document.createElement("img");
-    img.setAttribute("src", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCRtu9x86OcdwTZU9HeZx39XUL8VSYjy1bpw&usqp=CAU");
+    img.setAttribute("src", data.user.profile_pic);
     img.setAttribute("alt", "logo");
     var h4 = document.createElement("h4");
-    h4.innerText = "Emily Stubbs In Fitness And In Healty"
+    h4.innerText = data.user.profile_bio;
     innerItemDiv.appendChild(img);
     innerItemDiv.appendChild(h4);
     itemInnerLeftDiv.appendChild(innerItemDiv);
 
     var h2 = document.createElement("h2");
-    h2.innerText = "I Exercised Twice a day for 75day-Here's What Happened";
+    h2.innerText = data.post.title;
     itemInnerLeftDiv.appendChild(h2);
 
     var h3 = document.createElement("h3");
-    h3.innerText = "I felt invincible";
+    h3.innerText = data.post.subtitle;
     itemInnerLeftDiv.appendChild(h3);
 
     var span = document.createElement("span");
-    span.innerHTML = "Nov 21 <div> . </div> 9 min read"
+    span.innerHTML = data.post.time;
     itemInnerLeftDiv.appendChild(span);
 
     return itemInnerLeftDiv;
 }
 
-function createInnerLeftImgCart() {
+function createInnerLeftImgCart(articleImgLink) {
     var itemInnerLeftImgDiv = createDiv("item-inner-left-img-div");
 
     var img = document.createElement("img");
-    img.setAttribute("src", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLOIOkSdoUjc2HMcY2gKRURgSO_YaiTkyE3g&amp;usqp=CAU");
+    img.setAttribute("src", articleImgLink);
     img.setAttribute("alt", "my-img");
     itemInnerLeftImgDiv.appendChild(img);
     return itemInnerLeftImgDiv;
@@ -83,7 +129,7 @@ function showInterests() {
 
     //createInterestList()
 
-    for(var i = 0; i < interestList.length; i++) {
+    for (var i = 0; i < interestList.length; i++) {
         var boxDiv = createInterestListItem(interestList[i]);
         rightItemDiv.appendChild(boxDiv);
     }
@@ -119,16 +165,16 @@ function createHeader() {
     oneDiv.appendChild(h2);
 
     var twoDiv = createDiv("two-div");
-    
+
     var ul = document.createElement("ul");
 
-    for(var i = 0; i < navMenus.length; i++) {
+    for (var i = 0; i < navMenus.length; i++) {
         var li = creatTitle(navMenus[i]);
         ul.appendChild(li);
     }
-  
+
     twoDiv.appendChild(ul);
-    
+
     var threeDiv = createDiv("three-div");
     var btn = document.createElement("button");
     btn.setAttribute("class", "btn");
