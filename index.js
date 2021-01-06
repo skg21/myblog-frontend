@@ -1,56 +1,30 @@
 function loadIndex() {
     createHeader();
 
-    createArticleList();
+    getArticleList();
 
     showInterests();
 }
 
-//post Data
-var articleData = [{
-    "user": {
-        "username": "",
-        "profile_pic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXwZ2AmXcwAriD5G77QHxuFvxqJV6YZ_sCWg&usqp=CAU",
-        "profile_bio": "Emily Stubbs In Fitness And In Healty"
-    },
-    "post": {
-        "title": "I Exercised Twice a day for 75day-Here'sWhat Happened",
-        "subtitle": "I felt invincible",
-        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXwZ2AmXcwAriD5G77QHxuFvxqJV6YZ_sCWg&usqp=CAU",
-        "time": "Nov 21.9 min read"
+function getArticleList() {
+    var url = "http://localhost:3000";
+    /*var req = new XMLHttpRequest();
+    req.open("GET", url);
+    req.send();
+    req.onreadystatechange = function() {
+        if(this.readyState == 4) {
+            console.log(typeof this.responseText);
+            var response = JSON.parse(this.responseText);
+            return response;
+        }
     }
-},
-
-{
-    "user": {
-        "username": "",
-        "profile_pic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCRtu9x86OcdwTZU9HeZx39XUL8VSYjy1bpw&usqp=CAU",
-        "profile_bio": "Web Desing with html and css",
-    },
-    "post": {
-        "title": "I Exercised Twice a day for 75day-Here'sWhat Happened",
-        "subtitle": "I felt invincible",
-        "img": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8ZGVza3RvcCUyMGNvbXB1dGVyfGVufDB8fDB8&ixlib=rb-1.2.1&w=1000&q=80",
-        "time": "Nov 21.9 min read"
-    }
-},
-
-{
-    "user": {
-        "username": "",
-        "profile_pic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRa0KF6cNZQJCzwTOhEiOlhCk12-HDUHX0QiQ&usqp=CAU",
-        "profile_bio": "Agile Web Development With Rails 6"
-    },
-    "post": {
-        "title": "I Exercised Twice a day for 75day-Here'sWhat Happened",
-        "subtitle": "I felt invincible",
-        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRa0KF6cNZQJCzwTOhEiOlhCk12-HDUHX0QiQ&usqp=CAU",
-        "time": "Nov 21.9 min read"
-    }
+    */
+   fetch(url)
+  .then(response => response.json())
+  .then(data => createArticleList(data));
 }
-]
 
-function createArticleList() {
+function createArticleList(articleData) {
     var leftDiv = document.getElementsByClassName("left-div")[0];
 
     for (var i = 0; i < articleData.length; i++) {
@@ -70,6 +44,8 @@ function createArticleList() {
         leftDiv.appendChild(itemDiv);
     }
 }
+
+
 
 function createInnerLeftCart(data) {
     var itemInnerLeftDiv = createDiv("item-inner-left-div");
