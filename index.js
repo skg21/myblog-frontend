@@ -19,9 +19,9 @@ function getArticleList() {
         }
     }
     */
-   fetch(url)
-  .then(response => response.json())
-  .then(data => createArticleList(data));
+    fetch(url)
+        .then(response => response.json())
+        .then(data => createArticleList(data));
 }
 
 function createArticleList(articleData) {
@@ -173,45 +173,3 @@ function creatTitle(item) {
 
 }
 //---------------------------------//
-/*
-function createHeader() {
-    var sectionDiv = document.getElementsByClassName("section1")[0];
-
-    var mainDiv = createDiv("main-div");
-    var navDiv = createDiv("navDiv");
-    var h2 = document.createElement("h2");
-    h2.innerText = "Medium";
-    var ul = document.createElement("ul");
-    var li = creatTitle("Our Story");
-    ul.appendChild(li);
-    var li = creatTitle("Membership");
-    ul.appendChild(li);
-
-    var li = creatTitle("write");
-    ul.appendChild(li);
-
-    var li = creatTitle("sing In");
-    ul.appendChild(li);
-
-    //getStarted button
-    var button = document.createElement("button");
-    button.innerText = "Get Started";
-    button.setAttribute("class", "btn");
-
-    ul.appendChild(button);
-
-    sectionDiv.appendChild(mainDiv);
-    mainDiv.appendChild(navDiv);
-    navDiv.appendChild(h2);
-    navDiv.appendChild(ul);
-    //createInterestList()
-
-}
-function creatTitle(item) {
-    var li = document.createElement("li");
-    var a = document.createElement("a");
-    a.innerText = item;
-    a.setAttribute("herf", "#");
-    li.appendChild(a);
-    return li
-}  */
