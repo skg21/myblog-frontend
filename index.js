@@ -71,6 +71,7 @@ function createInnerLeftCart(data) {
     var span = document.createElement("span");
     span.innerHTML = data.post.time;
     itemInnerLeftDiv.appendChild(span);
+    
 
     return itemInnerLeftDiv;
 }
