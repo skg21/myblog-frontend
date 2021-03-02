@@ -3,6 +3,7 @@
 
 <head></head>
 <script src="index.js"></script>
+<link rel="stylesheet" href="style.css">
 
 <body onload="loadIndex();">
     <!---section1-start-->
@@ -26,12 +27,20 @@
 
     <!--section3-start-->
     <div class="section3">
-        <div class="left-div"></div>
-        <div class="right-div"> </div>
+        <div class="box1">
+            <div class="items">
+                <div class="inner-iteam">
+                    <img src="" alt="my img">
+                    <h4>Razvan dragomir in Better Porgramming</h4>
+                </div>
 
+            </div>
+        </div>
+        <div class="box2"></div>
     </div>
 
     <!---css-->
+
     <style>
         * {
             padding: 0;
@@ -46,6 +55,7 @@
             background-color: #FFC017;
             display: flex;
             position: fixed;
+            flex-wrap: wrap;
         }
 
         .one-div {
@@ -105,7 +115,6 @@
             min-width: 100vh;
             border: solid 1px black;
             background-color: #FFC017;
-            flex-wrap: nowrap;
 
         }
 
@@ -127,7 +136,9 @@
             font-feature-settings: 'pnum'on, 'lnum'on;
             font-weight: 400;
             letter-spacing: -0.05em;
+            flex-wrap: wrap;
         }
+
         h1 {
             margin-top: 48px;
             margin-left: 150px;
@@ -169,27 +180,67 @@
         }
 
         .section3 {
-            height: 900px;
-            min-width: 100vh;
+            background-color: lightcoral;
+            margin: 0;
+            height: 100vh;
+            flex-wrap: wrap;
+            display: flex;
+            padding: 50px 120px;
+
+
+        }
+
+        .box1 {
+            height: 80vh;
+            width: 60%;
+            color: #fff;
+            border: solid 1px;
+            position: relative;
+            flex-wrap: wrap;
+        }
+
+        .box2 {
+            height: 80vh;
+            width: 35%;
+            color: #fff;
+            border: solid 1px;
+            position: relative;
+            margin-left: 63px;
+        }
+
+        .items {
+            height: 200px;
+            width: 725px;
+            border: solid 1px black;
+            margin: 25px;
+            flex-wrap: wrap;
+        }
+
+        .inner-iteam {
+            height: 40px;
+            width: 400px;
             border: solid 1px;
             display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
         }
 
-        .left-div {
-            width: 850px;
-            height: 800px;
-            display: block;
-            padding: 5px 35px;
+        .inner-iteam img {
+            height: 60px;
+            width: 100px;
+            border-radius: 50%;
         }
 
-        .right-div {
-            width: 600px;
-            height: 800px;
-            padding: 5px 5px;
-            position: sticky;
-            top: 50px;
 
-        }
+
+
+
+
+
+
+
+
+        /*
 
         *,
         *:before,
@@ -302,7 +353,7 @@
             width: 300px;
             border: solid 1px;
             display: flex;
-        }
+        } */
     </style>
 </body>
 

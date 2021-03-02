@@ -1,13 +1,13 @@
 function loadIndex() {
     createHeader();
 
-    getArticleList();
+    //getArticleList();
 
-    showInterests();
+    //showInterests();
 }
 
 function getArticleList() {
-    var url = "http://localhost:3000";
+    var url = "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@KonradDaWo";
     /*var req = new XMLHttpRequest();
     req.open("GET", url);
     req.send();
@@ -25,6 +25,7 @@ function getArticleList() {
 }
 
 function createArticleList(articleData) {
+    console.log(articleData);
     var leftDiv = document.getElementsByClassName("left-div")[0];
 
     for (var i = 0; i < articleData.length; i++) {
@@ -54,7 +55,7 @@ function createInnerLeftCart(data) {
     var img = document.createElement("img");
     img.setAttribute("src", data.user.profile_pic);
     img.setAttribute("alt", "logo");
-    var h4 = document.createElement("h4");
+    var h4 = document.createElement("h4");             
     h4.innerText = data.user.profile_bio;
     innerItemDiv.appendChild(img);
     innerItemDiv.appendChild(h4);
@@ -163,7 +164,7 @@ function createHeader() {
     headerDiv.appendChild(threeDiv);
 }
 
-function creatTitle(item) {
+function creatTitle(item) { 
     var li = document.createElement("li");
     var a = document.createElement("a");
     a.innerText = item;
