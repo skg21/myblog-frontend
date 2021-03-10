@@ -1,14 +1,42 @@
 function loadIndex() {
     createHeader();
+    GetArticeList();
 
     //getArticleList();
 
     //showInterests();
-}
+};
 
 function GetArticeList() {
-    var leftDiv = document.getElementsByClassName("left-div")[0];
-}
+    var div = document.getElementsByClassName("section3")[0];
+    var box1 = document.createElement("div");
+    box1.setAttribute("class", "box-item1");
+
+    var itemDiv = document.createElement("div");
+    itemDiv.setAttribute("class", "item");
+
+    var leftItemDiv = document.createElement("div");
+    leftItemDiv.setAttribute("class", "left-item");
+
+    var logoimgDiv = document.createElement("div");
+    logoimgDiv.setAttribute("class", "logo-img-div");
+
+    var img = document.createElement("img");
+    img.setAttribute("src", "#");
+
+
+    var h4 = document.createElement("h4");
+    h4.setAttribute("class", "#");
+    h4.innerText = "Insider";
+
+
+    div.appendChild(box1);
+    box1.appendChild(itemDiv);
+    itemDiv.appendChild(leftItemDiv);
+    leftItemDiv.appendChild(logoimgDiv);
+    logoimgDiv.appendChild(img);
+    logoimgDiv.appendChild(h4);
+};
 
 
 
@@ -136,7 +164,7 @@ function showInterests() {
 
     var footer = document.createElement("h4");
     footer.innerText = "See all topics";
-
+    opl
     rightItemDiv.appendChild(footer);
     rightDiv.appendChild(rightItemDiv);
 }
