@@ -9,6 +9,7 @@ function loadIndex() {
 
 function GetArticeList() {
 
+
     var div = document.getElementsByClassName("section3")[0];
     var box1 = document.createElement("div");
     box1.setAttribute("class", "box-item1");
