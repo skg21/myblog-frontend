@@ -1,64 +1,72 @@
 function loadIndex() {
     createHeader();
-    GetArticeList();
+    renderTrendingArticles();
 
     //getArticleList();
 
     //showInterests();
 };
 
-function GetArticeList() {
+function renderTrendingArticles() {
+    var url = "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@KonradDaWo";
+    fetch(url)
+        .then(response => response.json())
+        .then(data => createTrendingArticleList(data));
+}
+
+function createTrendingArticleList(data) {
+    console.log(data); 
+    for (var i = 0; i < data.items.length; i++) {
+        var item = data.items[i];
+        var feed = data.feed;
+        var div = document.getElementsByClassName("section3")[0];
+        var box1 = document.createElement("div");
+        box1.setAttribute("class", "box-item1");
+
+        var itemDiv = document.createElement("div");
+        itemDiv.setAttribute("class", "item");
+
+        var leftItemDiv = document.createElement("div");
+        leftItemDiv.setAttribute("class", "left-item");
+
+        var logoimgDiv = document.createElement("div");
+        logoimgDiv.setAttribute("class", "logo-img-div");
+
+        var profilePhoto = document.createElement("img");
+        profilePhoto.setAttribute("src", feed.image);
 
 
-    var div = document.getElementsByClassName("section3")[0];
-    var box1 = document.createElement("div");
-    box1.setAttribute("class", "box-item1");
+        var h4 = document.createElement("h4");
+        h4.setAttribute("class", "#");
+        h4.innerText = "Insider";
 
-    var itemDiv = document.createElement("div");
-    itemDiv.setAttribute("class", "item");
+        var title = document.createElement("h2");
+        title.innerText = item.title;
 
-    var leftItemDiv = document.createElement("div");
-    leftItemDiv.setAttribute("class", "left-item");
+        var h3 = document.createElement("h3");
+        h3.innerText = "Rich doesn't necessarily mean owning a huge mansion or taking luxury vacation multiple times a year";
 
-    var logoimgDiv = document.createElement("div");
-    logoimgDiv.setAttribute("class", "logo-img-div");
+        var pubDate = document.createElement("span");
+        pubDate.innerText = item.pubDate;
 
-    var img1 = document.createElement("img");
-    img1.setAttribute("src", "https://miro.medium.com/fit/c/25/25/1*qomQdmxrTrTO3MVBY8i_jw@2x.jpeg");
+        var imgDiv = document.createElement("div");
+        imgDiv.setAttribute("class", "img-div");
 
+        var thumbnail = document.createElement("img");
+        thumbnail.setAttribute("src", item.thumbnail);
 
-    var h4 = document.createElement("h4");
-    h4.setAttribute("class", "#");
-    h4.innerText = "Insider";
-
-    var h2 = document.createElement("h2");
-    h2.innerText = "I didn't drink water at dinner as a poor, Black kid";
-
-    var h3 = document.createElement("h3");
-    h3.innerText = "Rich doesn't necessarily mean owning a huge mansion or taking luxury vacation multiple times a year";
-
-    var span = document.createElement(span);
-    span.innerText = "Feb 3. 5 min read";
-
-    var imgDiv = document.createElement("div");
-    imgDiv.setAttribute("class", "img-div");
-
-    var img2 = document.createElement("img");
-    img2.setAttribute("src", "https://miro.medium.com/fit/c/250/166/1*-I5lmGNmjNJhvBLKLiuIdA.jpeg");
-
-
-
-    div.appendChild(box1);
-    box1.appendChild(itemDiv);
-    itemDiv.appendChild(leftItemDiv);
-    leftItemDiv.appendChild(logoimgDiv);
-    logoimgDiv.appendChild(img1);
-    logoimgDiv.appendChild(h4);
-    leftItemDiv.appendChild(h2);
-    leftItemDiv.appendChild(h3)
-    leftItemDiv.appendChild(span);
-    itemDiv.appendChild(imgDiv);
-    imgDiv.appendChild(img2);
+        div.appendChild(box1);
+        box1.appendChild(itemDiv);
+        itemDiv.appendChild(leftItemDiv);
+        leftItemDiv.appendChild(logoimgDiv);
+        logoimgDiv.appendChild(profilePhoto);
+        logoimgDiv.appendChild(h4);
+        leftItemDiv.appendChild(title);
+        leftItemDiv.appendChild(h3)
+        leftItemDiv.appendChild(pubDate);
+        itemDiv.appendChild(imgDiv);
+        imgDiv.appendChild(thumbnail);
+    }
 };
 
 
@@ -75,27 +83,6 @@ function GetArticeList() {
 
 
 
-
-
-
-
-function getArticleList() {
-    var url = "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@KonradDaWo";
-    /*var req = new XMLHttpRequest();
-    req.open("GET", url);
-    req.send();
-    req.onreadystatechange = function() {
-        if(this.readyState == 4) {
-            console.log(typeof this.responseText);
-            var response = JSON.parse(this.responseText);
-            return response;
-        }
-    }
-    */
-    fetch(url)
-        .then(response => response.json())
-        .then(data => createArticleList(data));
-}
 
 function createArticleList(articleData) {
     console.log(articleData);
