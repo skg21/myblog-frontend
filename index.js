@@ -15,7 +15,7 @@ function renderTrendingArticles() {
 }
 
 function createTrendingArticleList(data) {
-    console.log(data); 
+    console.log(data);
     for (var i = 0; i < data.items.length; i++) {
         var item = data.items[i];
         var feed = data.feed;
@@ -38,7 +38,7 @@ function createTrendingArticleList(data) {
 
         var h4 = document.createElement("h4");
         h4.setAttribute("class", "#");
-        h4.innerText = "Insider";
+        h4.innerText = item.author;
 
         var title = document.createElement("h2");
         title.innerText = item.title;
